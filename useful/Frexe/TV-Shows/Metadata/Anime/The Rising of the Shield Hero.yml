@@ -1,0 +1,11 @@
+metadata:               #Posters found here https://theposterdb.com/set/138788
+
+   "The Rising of the Shield Hero (2019)":
+    year: 2019
+    title: "The Rising of the Shield Hero"
+    url_poster: https://theposterdb.com/api/assets/230773
+    seasons:
+      1:
+        url_poster: https://theposterdb.com/api/assets/230774
+      2:
+        url_poster: https://theposterdb.com/api/assets/230775
