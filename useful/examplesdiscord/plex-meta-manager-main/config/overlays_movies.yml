@@ -1,0 +1,98 @@
+overlays:
+  rating_high:
+    overlay:
+      name: Rating_High_BG
+      horizontal_offset: 375
+      horizontal_align: center
+      vertical_offset: 0
+      vertical_align: bottom
+      url: https://raw.githubusercontent.com/FatPancake-14/plex-meta-manager/main/config/overlays/ratings/Rating_High.png
+    plex_search:
+      all:
+        user_rating.gte: 6.5
+        user_rating.lte: 9.9
+        
+  rating_mid:
+    overlay:
+      name: Rating_Mid_BG
+      horizontal_offset: 375
+      horizontal_align: center
+      vertical_offset: 0
+      vertical_align: bottom
+      url: https://raw.githubusercontent.com/FatPancake-14/plex-meta-manager/main/config/overlays/ratings/Rating_Mid.png
+    plex_search:
+      all:
+        user_rating.gte: 4.5
+        user_rating.lte: 6.4
+
+  rating_low:
+    overlay:
+      name: Rating_Low_BG
+      horizontal_offset: 375
+      horizontal_align: center
+      vertical_offset: 0
+      vertical_align: bottom
+      url: https://raw.githubusercontent.com/FatPancake-14/plex-meta-manager/main/config/overlays/ratings/Rating_Low.png
+    plex_search:
+      all:
+        user_rating.gte: 0.1
+        user_rating.lte: 4.4
+
+  user_rating_black:
+    overlay:
+      group: rating_text
+      weight: 20
+      rating_type: user_rating
+      name: text(user_rating)
+      horizontal_offset: 375
+      horizontal_align: center
+      vertical_offset: 70
+      vertical_align: bottom
+      font: config/fonts/CircularStd-Bold.otf
+      font_size: 85
+      font_color: "#282a2d"
+    plex_search:
+      all:
+        user_rating.gte: 4.5
+        user_rating.lte: 6.4
+
+  user_rating:
+    overlay:
+      group: rating_text
+      weight: 10
+      rating_type: user_rating
+      name: text(user_rating)
+      horizontal_offset: 375
+      horizontal_align: center
+      vertical_offset: 70
+      vertical_align: bottom
+      font: config/fonts/CircularStd-Bold.otf
+      font_size: 85
+      font_color: "#FFFFFF"
+    plex_search:
+      all:
+        user_rating.gte: 0.1
+        user_rating.lte: 9.9
+        
+  4K:
+    overlay:
+      name: 4K
+      horizontal_offset: 0
+      horizontal_align: left
+      vertical_offset: 0
+      vertical_align: top
+      url: https://raw.githubusercontent.com/FatPancake-14/plex-meta-manager/main/config/overlays/4K/4K.png
+    plex_search:
+      any:
+        resolution: 4K
+
+  Force-Filter:
+    overlay:
+      name: Force-Filter
+      url: https://raw.githubusercontent.com/FatPancake-14/plex-meta-manager/main/config/overlays/Force-Filter.png
+      vertical_align: bottom
+    plex_search:
+      all:
+        year.not: 1800
+    filters:
+      has_dolby_vision: true

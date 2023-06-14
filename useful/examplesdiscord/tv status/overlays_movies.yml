@@ -1,0 +1,25 @@
+###
+###
+overlays:
+###
+
+  Hot:
+    overlay:
+      name: hot
+    tmdb_trending_daily: 100
+
+  Awards:
+    overlay:
+      name: awards
+    imdb_list:
+    - https://www.imdb.com/search/title/?release_date=1900-01-01,2030-01-01&groups=emmy_winner&title_type=feature
+    - https://www.imdb.com/search/title/?release_date=1990-05-31,2023-06-01&groups=golden_globe_winner&title_type=feature
+    - https://www.imdb.com/search/title/?release_date=1990-05-31,2023-06-01&groups=oscar_winner&title_type=feature
+
+  Recommended:
+    overlay:
+      name: recommended
+    trakt_list: https://trakt.tv/users/tdeverx/lists/loved
+
+###
+###

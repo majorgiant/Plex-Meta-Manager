@@ -1,0 +1,48 @@
+###
+###
+overlays:
+###
+
+  Ended:
+    overlay:
+      name: ended
+    plex_all: true
+    filters:
+      tmdb_status: ended
+
+  Weekly:
+    overlay:
+      name: weekly
+    tmdb_on_the_air: 5000
+
+  Canceled:
+    overlay:
+      name: canceled
+    plex_all: true
+    filters:
+      tmdb_status: canceled
+
+  Hot:
+    overlay:
+      name: hot
+    tmdb_trending_daily: 100
+
+  Awards:
+    overlay:
+      name: awards
+    imdb_list:
+    - https://www.imdb.com/search/title/?release_date=1900-01-01,2030-01-01&groups=emmy_winner&title_type=tv_series,tv_miniseries
+    - https://www.imdb.com/search/title/?release_date=1990-05-31,2023-06-01&groups=golden_globe_winner&title_type=tv_series,tv_miniseries
+
+  Worth:
+    overlay:
+      name: worth
+    trakt_list: https://trakt.tv/users/tdeverx/lists/worth-it
+
+  Recommended:
+    overlay:
+      name: recommended
+    trakt_list: https://trakt.tv/users/tdeverx/lists/loved
+
+###
+###

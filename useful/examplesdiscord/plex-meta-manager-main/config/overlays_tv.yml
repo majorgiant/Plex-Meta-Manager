@@ -1,0 +1,232 @@
+templates:
+  Streaming:
+    optional:
+      - overlay_level
+      - use_<<slug>>
+    default:
+      overlay: <<overlay_name>>
+      horizontal_offset: 25
+      horizontal_align: left
+      vertical_offset: 25
+      vertical_align: top
+    allowed_library_types: <<use_<<slug>>>>
+    ignore_blank_results: true
+    overlay:
+      name: <<overlay_name>>
+      url: https://raw.githubusercontent.com/FatPancake-14/plex-meta-manager/main/config/overlays/streaming/<<overlay>>.png
+      group: streaming
+      weight: <<weight>>
+      horizontal_offset: <<horizontal_offset>>
+      horizontal_align: <<horizontal_align>>
+      vertical_offset: <<vertical_offset>>
+      vertical_align: <<vertical_align>>
+    tmdb_network: <<slug>>
+    
+
+overlays:
+  Netflix:
+    template:
+      - name: Streaming
+        weight: 200
+        slug: 213
+
+  Amazon_Prime_Video:
+    template:
+      - name: Streaming
+        weight: 190
+        slug: 1024
+
+  Disney+:
+    template:
+      - name: Streaming
+        weight: 180
+        slug: 2739
+
+  HBO:
+    template:
+      - name: Streaming
+        weight: 170
+        slug: 49
+
+  BBC:
+    template:
+      - name: Streaming
+        weight: 160
+        slug: 4
+
+  BBC2:
+    template:
+      - name: Streaming
+        weight: 159
+        slug: 332
+
+  BBC3:
+    template:
+      - name: Streaming
+        weight: 158
+        slug: 3
+
+  BBC4:
+    template:
+      - name: Streaming
+        weight: 157
+        slug: 100
+
+  Hulu:
+    template:
+      - name: Streaming
+        weight: 150
+        slug: 453
+
+  Paramount:
+    template:
+      - name: Streaming
+        weight: 140
+        slug: 4330
+
+  AppleTV:
+    template:
+      - name: Streaming
+        weight: 130
+        slug: 2552
+
+  Peacock:
+    template:
+      - name: Streaming
+        weight: 120
+        slug: 3353
+
+  ITV:
+    template:
+      - name: Streaming
+        weight: 110
+        slug: 9
+
+  Channel_4:
+    template:
+      - name: Streaming
+        weight: 100
+        slug: 26
+
+  Sky:
+    template:
+      - name: Streaming
+        weight: 90
+        slug: 5237
+        
+  FX:
+    template:
+      - name: Streaming
+        weight: 80
+        slug: 88
+        
+  Starz:
+    template:
+      - name: Streaming
+        weight: 70
+        slug: 318
+
+  Nickelodeon:
+    template:
+      - name: Streaming
+        weight: 60
+        slug: 13
+        
+  CN:
+    template:
+      - name: Streaming
+        weight: 50
+        slug: 56
+        
+  Adult_Swim:
+    template:
+      - name: Streaming
+        weight: 40
+        slug: 80
+        
+  rating_high:
+    overlay:
+      name: Rating_High_BG
+      horizontal_offset: 375
+      horizontal_align: center
+      vertical_offset: 0
+      vertical_align: bottom
+      url: https://raw.githubusercontent.com/FatPancake-14/plex-meta-manager/main/config/overlays/ratings/Rating_High.png
+    plex_search:
+      all:
+        user_rating.gte: 6.5
+        user_rating.lte: 9.9
+        
+  rating_mid:
+    overlay:
+      name: Rating_Mid_BG
+      horizontal_offset: 375
+      horizontal_align: center
+      vertical_offset: 0
+      vertical_align: bottom
+      url: https://raw.githubusercontent.com/FatPancake-14/plex-meta-manager/main/config/overlays/ratings/Rating_Mid.png
+    plex_search:
+      all:
+        user_rating.gte: 4.5
+        user_rating.lte: 6.4
+
+  rating_low:
+    overlay:
+      name: Rating_Low_BG
+      horizontal_offset: 375
+      horizontal_align: center
+      vertical_offset: 0
+      vertical_align: bottom
+      url: https://raw.githubusercontent.com/FatPancake-14/plex-meta-manager/main/config/overlays/ratings/Rating_Low.png
+    plex_search:
+      all:
+        user_rating.gte: 0.1
+        user_rating.lte: 4.4
+
+  user_rating_black:
+    overlay:
+      group: rating_text
+      weight: 20
+      rating_type: user_rating
+      name: text(user_rating)
+      horizontal_offset: 375
+      horizontal_align: center
+      vertical_offset: 70
+      vertical_align: bottom
+      font: config/fonts/CircularStd-Bold.otf
+      font_size: 85
+      font_color: "#282a2d"
+    plex_search:
+      all:
+        user_rating.gte: 4.5
+        user_rating.lte: 6.4
+
+  user_rating:
+    overlay:
+      group: rating_text
+      weight: 10
+      rating_type: user_rating
+      name: text(user_rating)
+      horizontal_offset: 375
+      horizontal_align: center
+      vertical_offset: 70
+      vertical_align: bottom
+      font: config/fonts/CircularStd-Bold.otf
+      font_size: 85
+      font_color: "#FFFFFF"
+    plex_search:
+      all:
+        user_rating.gte: 0.1
+        user_rating.lte: 9.9
+        
+  4K:
+    overlay:
+      name: 4K
+      horizontal_offset: 0
+      horizontal_align: left
+      vertical_offset: 0
+      vertical_align: top
+      url: https://raw.githubusercontent.com/FatPancake-14/plex-meta-manager/main/config/overlays/4K/4K.png
+    plex_search:
+      any:
+        resolution: 4K

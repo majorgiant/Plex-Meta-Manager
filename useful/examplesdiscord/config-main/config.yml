@@ -1,0 +1,130 @@
+libraries:
+  Movies: 
+    metadata_path:
+    - folder: config/Movies
+    - git: PMM/year
+      template_variables:
+        use_separator: false 
+        limit: 100
+        data:
+          starting: current_year-4
+          ending: current_year
+  TV Shows:
+    metadata_path:
+    - folder: config/TVShows
+    - git: PMM/year
+      template_variables:
+        use_separator: false
+        data:
+          starting: current_year-4
+          ending: current_year
+playlist_files:
+- git: PMM/playlist
+settings:
+  cache: true
+  cache_expiration: 60
+  asset_directory: config/assets
+  asset_folders: false
+  asset_depth: 0
+  create_asset_folders: false
+  prioritize_assets: true
+  dimensional_asset_rename: false
+  download_url_assets: true
+  show_missing_season_assets: false
+  show_missing_episode_assets: false
+  show_asset_not_needed: true
+  sync_mode: sync
+  minimum_items: 1
+  default_collection_order:
+  delete_below_minimum: true
+  delete_not_scheduled: false
+  run_again_delay: 2
+  missing_only_released: false
+  only_filter_missing: false
+  show_unmanaged: true
+  show_filtered: false
+  show_options: false
+  show_missing: false
+  show_missing_assets: false
+  save_report: false
+  tvdb_language: eng
+  ignore_ids:
+  ignore_imdb_ids:
+  item_refresh_delay: 0
+  playlist_sync_to_user: all
+  playlist_report: false
+  verify_ssl: true
+  custom_repo:
+  check_nightly: false
+webhooks:                                       # Can be individually specified per library as well
+  error: notifiarr
+  version:
+  run_start: notifiarr
+  run_end: notifiarr
+  changes: notifiarr
+plex:                                           # Can be individually specified per library as well; REQUIRED for the script to run
+  url: http://localhost:32400
+  token: correcttokenhere
+  timeout: 1200
+  clean_bundles: false
+  empty_trash: false
+  optimize: false
+tmdb:                                           # REQUIRED for the script to run
+  apikey: correctapihere
+  language: en
+  cache_expiration: 60
+  region:
+tautulli:                                       # Can be individually specified per library as well
+  url: http://localhost:8181
+  apikey: correctapihere
+omdb:
+  apikey: correctapihere
+  cache_expiration: 60
+mdblist:
+  apikey: correctapirehere
+  cache_expiration: 60
+notifiarr:
+  apikey: correctapihere
+radarr:                                         # Can be individually specified per library as well
+  url: http://localhost:7878
+  token: correctokenhere
+  add_missing: true
+  add_existing: false
+  root_folder_path: correctpathhere
+  monitor: true
+  availability: announced
+  quality_profile: HD-1080p
+  tag:
+  search: true
+  radarr_path:
+  plex_path:
+  upgrade_existing: false
+sonarr:                                         # Can be individually specified per library as well
+  url: http://localhost:8989
+  token: correcttokenhere
+  add_missing: false
+  add_existing: false
+  root_folder_path: correctpathhere
+  monitor: all
+  quality_profile: any
+  language_profile: English
+  series_type: standard
+  season_folder: true
+  tag:
+  search: true
+  cutoff_search: false
+  sonarr_path:
+  plex_path:
+  upgrade_existing: false
+trakt:
+  client_id: correctidhere
+  client_secret: correctsecrethere
+  pin:
+  authorization:
+    # everything below is autofilled by the script
+    access_token: 
+    token_type: 
+    expires_in: 
+    refresh_token: 
+    scope: 
+    created_at: 
