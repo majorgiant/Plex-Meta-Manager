@@ -1,0 +1,40 @@
+## This file is a template remove the .template to use the file
+libraries:                       # This is called out once within the config.yml file
+  testseries:
+    operations:
+      mass_user_rating_update: imdb
+      mass_critic_rating_update: imdb
+    metadata_path:
+    - pmm: network
+    - file: config/tv-status.yml
+#
+#      # see the wiki for how to use local files, folders, URLs, or files from git
+    overlay_path:   
+    - file: config/tvo-status.yml
+    - file: config/tvo-ratings.yml    
+    - pmm: resolution
+      template_variables:
+        use_dv: false
+        use_hdr: false
+        use_1080p: true
+        use_720p: true
+    - pmm: languages        ##subtitles
+      template_variables:
+        languages:
+          - nl                     ###Your subtitle language
+          - en                    ### Second subtitles 
+        use_subtitles: true
+        file: config/overlays/flags/<<key>>100.png
+        text: " "
+        back_width: 60
+        back_height: 100
+        back_color: "#FFFFFF00"
+        horizontal_offset: 145
+        horizontal_align: right
+        vertical_offset: 0
+        vertical_align: bottom
+
+#playlist_files:
+#    - file: config/playlists.yml                  # This is a file within PMM's defaults folder
+  # see the wiki for how to use local files, folders, URLs, or files from git
+

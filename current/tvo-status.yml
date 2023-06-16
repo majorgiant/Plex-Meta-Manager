@@ -1,0 +1,157 @@
+##
+ ##
+ ##
+ 
+ templates:
+   # BACKDROP
+   TV_Top_Backdrop:
+     sync_mode: sync
+     builder_level: show
+     overlay:
+       name: backdrop
+       back_color: "#000000" # darker 262626
+       back_width: 1920
+       back_height: 100
+       back_align: top
+       vertical_offset: 1400
+       horizontal_offset: 0
+       weight: 10
+ 
+   # TEXT CENTER
+   TV_Top_TextCenter:
+     sync_mode: sync
+     builder_level: show
+     overlay:
+       name: text(<<text>>)
+       horizontal_offset: 20
+       horizontal_align: left
+       vertical_offset: 20
+       vertical_align: bottom
+       #font: config/fonts/Juventus-Fans-Bold.ttf
+       font: config/fonts/Poppins-Bold.ttf
+       font_size: 70
+       font_color: <<color>>
+       group: TV_Top_TextCenter
+       weight: <<weight>>
+
+
+   weekly_text:
+     sync_mode: sync
+     builder_level: show
+     overlay:
+       name: text(<<text>>)
+       horizontal_offset: 400
+       horizontal_align: left
+       vertical_offset: 20
+       vertical_align: bottom
+       #font: config/fonts/Juventus-Fans-Bold.ttf
+       font: config/fonts/Poppins-Bold.ttf
+       font_size: 70
+       font_color: <<color>>
+       group: weekly_text
+       weight: <<weight>>
+
+
+##########################
+##########################
+
+    
+ ##############################
+ ##############################
+ 
+ 
+ overlays:
+   # BACKDROP
+   TV_Top_Backdrop:
+     template:
+       - name: TV_Top_Backdrop
+     plex_all: true
+ 
+   TV_Top_TextCenter_Weekly:
+    template:
+       - name: TV_Top_TextCenter
+         weight: 90
+         text: "WEEKLY EPISODES"
+         color: "#FFFFFF" # white    
+    plex_search:
+      all:
+        episode_air_date: 30
+
+ 
+   # LEAVING SOON
+   TV_Top_TextCenter_Leaving:
+     template:
+       - name: TV_Top_TextCenter
+         weight: 100
+         text: "LEAVING  SOON"
+         color: "#FF0000" # red
+     plex_search:
+       all:
+         collection: "Leaving Soon"
+ 
+   # MINI SERIES
+   TV_Top_TextCenter_Mini:
+     template:
+       - name: TV_Top_TextCenter
+         weight: 80
+         text: "MINI SERIES"
+         color: "#FFFFFF" # white
+     plex_search:
+       all:
+         label: Mini-Series
+ 
+   # NEW
+   TV_Top_TextCenter_New:
+     template:
+       - name: TV_Top_TextCenter
+         weight: 60
+         text: "NEW SHOW"
+         color: "#FFFFFF" # white
+     plex_all: true
+     filters:
+       tmdb_status:
+         - returning
+         - planned
+         - production
+       first_episode_aired: 90
+ 
+   # Airing
+   TV_Top_TextCenter_OnAir:
+     template:
+       - name: TV_Top_TextCenter
+         weight: 40
+         text: "RETURNING"
+         color: "#FFFFFF" # white
+     plex_all: true
+     filters:
+       tmdb_status:
+         - returning
+         - planned
+         - production
+ 
+   # ENDED
+   TV_Top_TextCenter_Ended:
+     template:
+       - name: TV_Top_TextCenter
+         weight: 20
+         text: "ENDED"
+         color: "#FFFFFF" # white
+     plex_all: true
+     filters:
+       tmdb_status:
+         - ended
+ 
+   # Canceled
+   TV_Top_TextCenter_Canceled:
+     template:
+       - name: TV_Top_TextCenter
+         weight: 20
+         text: "CANCELED"
+         color: "#FFFFFF" # white
+     plex_all: true
+     filters:
+       tmdb_status:
+         - canceled
+
+########################################
+########################################
